@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8675170472308231702}
   - component: {fileID: 5045826172505105185}
   - component: {fileID: 1096836345753954964}
+  - component: {fileID: 4495639842277193625}
   m_Layer: 0
   m_Name: CollectableObjectBasePrefab
   m_TagString: Untagged
@@ -120,3 +121,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreAmount: 0
   speed: 5
+--- !u!114 &4495639842277193625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504944172336428112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbd4ead10d7f7545aeeee1cd70cd015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

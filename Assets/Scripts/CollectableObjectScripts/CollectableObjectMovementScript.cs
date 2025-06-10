@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class CollectableObjectMovementScript : MonoBehaviour,ICollidable
+public class CollectableObjectMovementScript : MonoBehaviour
 {
 
-    [SerializeField] int ScoreAmount;
+    [SerializeField] private int ScoreAmount;
+    public int scoreAmount
+    {
+        get { return ScoreAmount; }
+    }
     [SerializeField] int speed;
     private Vector3 direction;
 
@@ -22,11 +26,5 @@ public class CollectableObjectMovementScript : MonoBehaviour,ICollidable
         {
             direction = Vector3.zero;
         }
-    }
-
-    public void OnCollision(Collider collider)
-    {
-        Debug.Log(ScoreAmount);
-        Destroy(gameObject);
-    }
+    }   
 }
