@@ -37,4 +37,9 @@ public class PlayerMovementScript : MonoBehaviour
         direction = Vector3.zero;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision détectée avec : " + collision.gameObject.name);
+    }
+
 }
