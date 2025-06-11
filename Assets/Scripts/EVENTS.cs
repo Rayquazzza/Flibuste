@@ -14,7 +14,7 @@ public class EVENTS
     public static void InvokeInitialization() { LogEventInConsole("Initialization"); OnInitialization?.Invoke();}
 
     public static event Action OnGameStart;
-    public static void InvokeGameStart() { LogEventInConsole("GameStart"); OnInitialization?.Invoke(); }
+    public static void InvokeGameStart() { LogEventInConsole("GameStart"); OnGameStart?.Invoke(); }
 
     public static event Action OnGameEnd;
     public static void InvokeGameEnd() { LogEventInConsole("GameEnd"); OnGameEnd?.Invoke(); }   

@@ -8,7 +8,17 @@ public class CollectableObjectManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(InstantiateCoroutine());
+        //StartCoroutine(InstantiateCoroutine());
+    }
+
+    private void OnEnable()
+    {
+        EVENTS.OnGameStart += LaunchInstantiateCoroutine;
+    }
+
+    private void OnDisable()
+    {
+        EVENTS.OnGameStart -= LaunchInstantiateCoroutine;
     }
 
     void InstantiateObjectAtRandomPosition()
@@ -21,19 +31,15 @@ public class CollectableObjectManagerScript : MonoBehaviour
 
     IEnumerator InstantiateCoroutine()
     {
-        while(true)
-        {
+        while(GAME.MANAGER.CurrentState == State.Gameplay)
+        {            
             InstantiateObjectAtRandomPosition();
             yield return new WaitForSeconds(Random.Range(2,4));
         }
-        
     }
 
-    
-
-
-
-
-
-   
+    void LaunchInstantiateCoroutine()
+    {
+        StartCoroutine(InstantiateCoroutine());
+    }   
 }

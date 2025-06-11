@@ -13,7 +13,7 @@ public class UIManagerScript : MonoBehaviour
     }
     private void OnEnable()
     {
-        EVENTS.OnInitialization += ShowStartMenu;
+        EVENTS.OnInitialization += ShowStartMenu;      
     }
 
     private void OnDisable()
@@ -25,11 +25,12 @@ public class UIManagerScript : MonoBehaviour
     {
         HideAllMenus();
         StartMenu.SetActive(true);
-        
+        GAME.MANAGER.EnterState(State.Start);
     }
 
     public void HideAllMenus()
     {
+        Debug.Log("HideAllMenus");
         AllMenus(false);
     }
 
@@ -43,6 +44,8 @@ public class UIManagerScript : MonoBehaviour
     {
         HideAllMenus();
         GameplayUI.SetActive(true);
+        GAME.MANAGER.EnterState(State.Gameplay);
+        EVENTS.InvokeGameStart();
     }
 
 
