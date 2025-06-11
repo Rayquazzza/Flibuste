@@ -19,8 +19,6 @@ public class ScoreManagerScript : MonoBehaviour
         Score.text = scoreCount.ToString();
         // Réduire brièvement avant l'effet "boing"
         Score.transform.localScale = Vector3.one * 0.8f;
-
-        Score.transform.DOScale(Vector3.one, 0.8f)
-            .SetEase(Ease.OutElastic);
+        Score.transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutElastic);
     }
 }
