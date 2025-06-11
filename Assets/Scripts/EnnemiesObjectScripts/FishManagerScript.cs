@@ -33,7 +33,7 @@ public class FishManagerScript : MonoBehaviour
     {
         while (true)
         {
-            if (GAME.MANAGER.CurrentState == State.Gameplay && timer >= Random.Range(20, 30))
+            if (GAME.MANAGER.CurrentState == State.Gameplay && timer >= Random.Range(1, 2))
             {
                 InstantiateFish();
                 timer = 0;

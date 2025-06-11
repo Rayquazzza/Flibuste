@@ -37,4 +37,10 @@ public class GAME : MonoBehaviour
             DestroyImmediate(gameObject);
         }
     }
+
+
+    public void GameOver()
+    {
+        EVENTS.InvokeGameEnd();
+    }
 }

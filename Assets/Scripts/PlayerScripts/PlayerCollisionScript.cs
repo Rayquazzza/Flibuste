@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollisionScript : MonoBehaviour,ICollidable
+public class PlayerCollisionScript : MonoBehaviour,ICollidable,ICollisionable
 {
+    public void OnCollide(Collision collision, GameObject sender)
+    {
+
+    }
     public void OnCollision(Collider collision)
     {
        
@@ -14,6 +18,16 @@ public class PlayerCollisionScript : MonoBehaviour,ICollidable
         if (collectable != null)
         {
             collectable.OnCollision(other);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ICollisionable collide = collision.gameObject.GetComponent<ICollisionable>();
+        if (collide != null)
+        {
+            // On passe aussi ce GameObject (le joueur) manuellement
+            collide.OnCollide(collision, this.gameObject);
         }
     }
 }

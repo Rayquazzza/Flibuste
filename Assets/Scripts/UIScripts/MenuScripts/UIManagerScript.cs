@@ -13,12 +13,14 @@ public class UIManagerScript : MonoBehaviour
     }
     private void OnEnable()
     {
-        EVENTS.OnInitialization += ShowStartMenu;      
+        EVENTS.OnInitialization += ShowStartMenu;
+        EVENTS.OnGameEnd += ExitGame;
     }
 
     private void OnDisable()
     {
         EVENTS.OnInitialization -= ShowStartMenu;
+        EVENTS.OnGameEnd -= ExitGame;
     }
 
     public void ShowStartMenu()
@@ -48,6 +50,10 @@ public class UIManagerScript : MonoBehaviour
         EVENTS.InvokeGameStart();
     }
 
-
-
+    public void ExitGame()
+    {
+        HideAllMenus();
+        GameOverMenu?.SetActive(true);
+        GAME.MANAGER.EnterState(State.End);
+    }
 }

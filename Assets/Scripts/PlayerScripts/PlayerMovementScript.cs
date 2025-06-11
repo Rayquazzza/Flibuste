@@ -8,11 +8,24 @@ public class PlayerMovementScript : MonoBehaviour
     private Rigidbody rb;
     private Vector3 direction;
     public float Speed;
+    public bool IsHide = false;
+    private Vector3 InitialPosition;
     // Start is called before the first frame update
     void Start()
     {
+        InitialPosition = transform.position;
         rb = GetComponent<Rigidbody>();
         direction = Vector3.zero;
+    }
+
+    private void OnEnable()
+    {
+        EVENTS.OnGameStart += ResetPosition;
+    }
+
+    private void OnDisable()
+    {
+        EVENTS.OnGameStart -= ResetPosition;
     }
 
     // Update is called once per frame
@@ -37,9 +50,18 @@ public class PlayerMovementScript : MonoBehaviour
         direction = Vector3.zero;
     }
 
+    public void Hide()
+    {
+        direction = Vector3.zero ;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision détectée avec : " + collision.gameObject.name);
     }
 
+    void ResetPosition()
+    {
+        transform.position = InitialPosition;
+    }
 }

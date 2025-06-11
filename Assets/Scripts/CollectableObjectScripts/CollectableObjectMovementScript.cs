@@ -22,7 +22,7 @@ public class CollectableObjectMovementScript : MonoBehaviour
     private void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        if (transform.position.y == 0)
+        if (transform.position.y <= 0)
         {
             direction = Vector3.zero;
         }

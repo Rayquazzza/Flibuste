@@ -8,28 +8,16 @@ using UnityEngine;
 public class FishMovementScript : MonoBehaviour
 {
     private PlayerCollisionScript Player;
-    private float Distance;
     private Vector3 direction;
     private Rigidbody rb;
-    [SerializeField] private float speed;
+    public bool Hascollide;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        Player = FindAnyObjectByType<PlayerCollisionScript>();
-        Distance = transform.position.x - Player.gameObject.transform.position.x;
-    }
-
+    [SerializeField] private float speed;   
     private void OnEnable()
     {
-        if (Distance >= 0)
-        {
-            direction = Vector3.left;
-        }
-        else if (Distance <= 0)
-        {
-            direction = Vector3.right;
-        }                                
+        Hascollide = false;
+        Player = FindAnyObjectByType<PlayerCollisionScript>();
+        rb = GetComponent<Rigidbody>();                               
         StartCoroutine(Movement());
     }
 
@@ -37,7 +25,15 @@ public class FishMovementScript : MonoBehaviour
     {
         while (true)
         {
-            rb.MovePosition(rb.position + direction * speed * Time.deltaTime);  
+            if(Hascollide == false)
+            {
+                rb.position = Vector3.MoveTowards(rb.position, Player.gameObject.transform.position, speed * Time.deltaTime);                
+            }
+            else if (Hascollide == true)
+            {
+                Vector3 oppositeDirection = (rb.position - Player.gameObject.transform.position).normalized;
+                rb.position += oppositeDirection * speed * Time.deltaTime;
+            }
             yield return null;
         }       
     }
