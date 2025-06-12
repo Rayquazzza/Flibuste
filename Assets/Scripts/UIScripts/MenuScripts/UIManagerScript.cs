@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIManagerScript : MonoBehaviour
 {
-    [SerializeField] GameObject StartMenu, GameOverMenu, GameplayUI;
+    [SerializeField] GameObject StartMenu, GameOverMenu, GameplayUI, TutorialUI;
 
     private void Start()
     {
@@ -40,6 +40,7 @@ public class UIManagerScript : MonoBehaviour
     {
         StartMenu.SetActive(wanted);
         GameOverMenu.SetActive(wanted);
+        TutorialUI.SetActive(wanted);
     }
 
     public void LaunchGame()
@@ -50,6 +51,11 @@ public class UIManagerScript : MonoBehaviour
         EVENTS.InvokeGameStart();
     }
 
+    public void StartGame()
+    {
+        HideAllMenus();
+        TutorialUI.SetActive(true);
+    }
     public void ExitGame()
     {
         HideAllMenus();

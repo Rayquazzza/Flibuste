@@ -16,12 +16,14 @@ public class FishManagerScript : MonoBehaviour
 
     private void OnEnable()
     {
+        EVENTS.OnGameStart += ResetTimer;
         EVENTS.OnLevelUp += LevelUp;
     }
 
     private void OnDisable()
     {
         EVENTS.OnLevelUp -= LevelUp;
+        EVENTS.OnGameStart -= ResetTimer;
     }
     void Start()
     {
@@ -67,5 +69,9 @@ public class FishManagerScript : MonoBehaviour
         MaxRandom *= 0.75f;
     }
 
+    void ResetTimer()
+    {
+        timer = 0;
+    }
 
 }

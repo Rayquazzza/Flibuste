@@ -7,6 +7,14 @@ public class ScoreManagerScript : MonoBehaviour
 {
     TextMeshProUGUI Score;
     int scoreCount = 0;
+    private void OnEnable()
+    {
+        EVENTS.OnGameStart += ResetScore;
+    }
+    private void OnDisable()
+    {
+        EVENTS.OnGameStart -= ResetScore;
+    }
 
     private void Start()
     {
@@ -20,5 +28,11 @@ public class ScoreManagerScript : MonoBehaviour
         // Réduire brièvement avant l'effet "boing"
         Score.transform.localScale = Vector3.one * 0.8f;
         Score.transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutElastic);
+    }
+
+    void ResetScore()
+    {
+        scoreCount = 0;
+        Score.text = scoreCount.ToString();
     }
 }
