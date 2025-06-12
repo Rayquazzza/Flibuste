@@ -1,16 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
-public class CollectableObjectMovementScript : MonoBehaviour
+public class NotCollectableObjectScript : MonoBehaviour
 {
-
-    [SerializeField] private int ScoreAmount;
-    public int scoreAmount
-    {
-        get { return ScoreAmount; }
-    }
     [SerializeField] int speed;
     private Vector3 direction;
 
@@ -24,7 +17,7 @@ public class CollectableObjectMovementScript : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
         if (transform.position.y <= -5)
         {
-           Destroy(gameObject);
+            Destroy(gameObject);
         }
-    }   
+    }
 }

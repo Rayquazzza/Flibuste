@@ -13,7 +13,16 @@ public class CollectableObjectCollisionScript : MonoBehaviour, ICollidable
     }
     public void OnCollision(Collider collider)
     {
-        scoremanager.AddScore(com_Script.scoreAmount);
-        Destroy(gameObject);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        CollisionForObjectScript collision = other.GetComponent<CollisionForObjectScript>();
+        if (collision != null)
+        {
+            scoremanager.AddScore(com_Script.scoreAmount);
+            Destroy(gameObject);    
+        }
     }
 }
