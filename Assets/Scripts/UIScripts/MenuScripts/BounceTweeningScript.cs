@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using DG.Tweening;
+
+public class BounceTweeningScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        transform.localScale = Vector3.one * 0.8f;
+        transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutElastic).SetLoops(-1, LoopType.Yoyo);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

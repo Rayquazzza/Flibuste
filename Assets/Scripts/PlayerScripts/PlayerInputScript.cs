@@ -19,8 +19,12 @@ public class PlayerInputScript : MonoBehaviour
     {
         if (GAME.MANAGER.CurrentState == State.Gameplay)
         {
-            if (Input.GetKeyDown(KeyCode.D)) LastKeyPress = KeyCode.D;
-            if (Input.GetKeyDown(KeyCode.Q)) LastKeyPress = KeyCode.Q;
+            if(m_Script.IsHide== false)
+            {
+                if (Input.GetKeyDown(KeyCode.D)) LastKeyPress = KeyCode.D;
+                if (Input.GetKeyDown(KeyCode.Q)) LastKeyPress = KeyCode.Q;
+            }
+            
             if (Input.GetKeyDown(KeyCode.S)) LastKeyPress = KeyCode.S;
             if (Input.GetKey(LastKeyPress))
             {

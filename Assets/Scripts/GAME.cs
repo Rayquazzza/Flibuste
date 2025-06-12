@@ -5,6 +5,8 @@ using UnityEngine;
 public class GAME : MonoBehaviour
 {
     public State CurrentState;
+    private float timer;
+    private int level;
 
     public static GAME MANAGER;
 
@@ -17,6 +19,23 @@ public class GAME : MonoBehaviour
             case State.Start: break;
             case State.End: break;
             case State.Gameplay:break;
+        }
+    }
+
+    private void Update()
+    {
+        if(CurrentState == State.Gameplay)
+        {
+            if (level >= 5)
+                return;
+            timer += Time.deltaTime;
+            if(timer >= 20)
+            {
+                level++;
+                Debug.Log(" Le Niveau Actuel est de : " + level);
+                EVENTS.InvokeLevelUp();
+                timer = 0;
+            }
         }
     }
 
@@ -42,5 +61,5 @@ public class GAME : MonoBehaviour
     public void GameOver()
     {
         EVENTS.InvokeGameEnd();
-    }
+    }    
 }

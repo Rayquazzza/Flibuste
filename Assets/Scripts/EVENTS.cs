@@ -17,7 +17,10 @@ public class EVENTS
     public static void InvokeGameStart() { LogEventInConsole("GameStart"); OnGameStart?.Invoke(); }
 
     public static event Action OnGameEnd;
-    public static void InvokeGameEnd() { LogEventInConsole("GameEnd"); OnGameEnd?.Invoke(); }   
+    public static void InvokeGameEnd() { LogEventInConsole("GameEnd"); OnGameEnd?.Invoke(); }
+
+    public static event Action OnLevelUp;
+    public static void InvokeLevelUp() { LogEventInConsole("LevelUp"); OnLevelUp?.Invoke(); }
 
 
 }

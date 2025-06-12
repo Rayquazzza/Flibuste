@@ -12,6 +12,17 @@ public class FishManagerScript : MonoBehaviour
     [SerializeField] private GameObject Fish;
     private float timer;
     // Start is called before the first frame update
+
+
+    private void OnEnable()
+    {
+        EVENTS.OnLevelUp += LevelUp;
+    }
+
+    private void OnDisable()
+    {
+        EVENTS.OnLevelUp -= LevelUp;
+    }
     void Start()
     {
         StartCoroutine(WaitForInstantiateFish());
@@ -49,6 +60,11 @@ public class FishManagerScript : MonoBehaviour
     {
         int index = Random.Range(0, FishSpawns.Length);
         Instantiate(Fish, FishSpawns[index].transform.position, Quaternion.identity);
+    }
+    void LevelUp()
+    {
+        MinRandom *= 0.75f;
+        MaxRandom *= 0.75f;
     }
 
 

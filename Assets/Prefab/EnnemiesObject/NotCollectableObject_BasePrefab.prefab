@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 505676102244193842}
   - component: {fileID: 5023959197895955348}
   - component: {fileID: 2283123635507070936}
+  - component: {fileID: -2005853959698691910}
+  - component: {fileID: -2458359676337294445}
   m_Layer: 0
   m_Name: NotCollectableObject_BasePrefab
   m_TagString: Untagged
@@ -132,3 +134,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65974da132ecf1c43b235f7ed9d6214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2005853959698691910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240311944235762118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1319c37cfb217f4ab223ab8ec01774a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAmount: 10
+  rotationSpeed: 1
+--- !u!114 &-2458359676337294445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240311944235762118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982d265f52adce04e804839b50fe0090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fx_Bulle: {fileID: 4885125593221902245, guid: 44843925544c7bf4c8818462348ce987,
+    type: 3}

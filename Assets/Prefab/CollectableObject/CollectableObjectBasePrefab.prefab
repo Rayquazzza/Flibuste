@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5045826172505105185}
   - component: {fileID: 1096836345753954964}
   - component: {fileID: 4495639842277193625}
+  - component: {fileID: -50141238269610694}
+  - component: {fileID: 3368392970769886471}
   m_Layer: 0
   m_Name: CollectableObjectBasePrefab
   m_TagString: Untagged
@@ -120,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreAmount: 0
+  fx_Bulle: {fileID: 4885125593221902245, guid: 44843925544c7bf4c8818462348ce987,
+    type: 3}
   speed: 5
 --- !u!114 &4495639842277193625
 MonoBehaviour:
@@ -133,3 +137,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbd4ead10d7f7545aeeee1cd70cd015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-50141238269610694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504944172336428112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1319c37cfb217f4ab223ab8ec01774a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAmount: 10
+  rotationSpeed: 1
+--- !u!114 &3368392970769886471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504944172336428112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982d265f52adce04e804839b50fe0090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fx_Bulle: {fileID: 4885125593221902245, guid: 44843925544c7bf4c8818462348ce987,
+    type: 3}
