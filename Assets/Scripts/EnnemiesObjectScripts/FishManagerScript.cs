@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class FishManagerScript : MonoBehaviour
 {
+    [SerializeField] private float MinRandom;
+    [SerializeField] private float MaxRandom;
     [SerializeField] private GameObject[] FishSpawns;
     [SerializeField] private GameObject Fish;
     private float timer;
@@ -33,7 +35,7 @@ public class FishManagerScript : MonoBehaviour
     {
         while (true)
         {
-            if (GAME.MANAGER.CurrentState == State.Gameplay && timer >= Random.Range(1, 2))
+            if (GAME.MANAGER.CurrentState == State.Gameplay && timer >= Random.Range(MinRandom, MaxRandom))
             {
                 InstantiateFish();
                 timer = 0;

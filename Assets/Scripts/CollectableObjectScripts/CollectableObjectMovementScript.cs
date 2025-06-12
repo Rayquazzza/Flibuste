@@ -24,7 +24,7 @@ public class CollectableObjectMovementScript : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
         if (transform.position.y <= 0)
         {
-            direction = Vector3.zero;
+           Destroy(gameObject);
         }
     }   
 }
