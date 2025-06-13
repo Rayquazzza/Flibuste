@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -10,12 +11,14 @@ public class PlayerMovementScript : MonoBehaviour
     public float Speed;
     public bool IsHide = false;
     private Vector3 InitialPosition;
+    NassScript nassScript;
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         InitialPosition = transform.position;
         rb = GetComponent<Rigidbody>();
         direction = Vector3.zero;
+        nassScript = GetComponentInChildren<NassScript>();
     }
 
     private void OnEnable()
@@ -47,12 +50,16 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void Stop()
     {
-        direction = Vector3.zero;
+        direction = Vector3.zero;       
     }
 
     public void Hide()
     {
         direction = Vector3.zero ;
+
+        if (nassScript != null) nassScript.HideWithNass();
+        else if (nassScript == null) Debug.Log("CA EXISTE PAS");
+
     }
 
     private void OnCollisionEnter(Collision collision)

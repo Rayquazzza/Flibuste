@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NotCollectableObjectCollisionScript : MonoBehaviour, ICollidable
 {
+    [SerializeField] private GameObject VFXTakeDamage;
     public void OnCollision(Collider collison)
     {
      
@@ -14,6 +15,10 @@ public class NotCollectableObjectCollisionScript : MonoBehaviour, ICollidable
         HealthPlayerScript collidable = other.GetComponentInParent<HealthPlayerScript>();
         if (collidable != null)
         {
+            if(VFXTakeDamage != null)
+            {
+                Instantiate(VFXTakeDamage,other.gameObject.transform.position, Quaternion.identity);
+            }
             Debug.Log(other.gameObject.name);
             collidable.TakeDamage();
             Destroy(gameObject);

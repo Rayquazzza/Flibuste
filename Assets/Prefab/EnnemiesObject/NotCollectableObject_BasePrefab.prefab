@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65974da132ecf1c43b235f7ed9d6214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFXTakeDamage: {fileID: 6448064249967372303, guid: 7281e7d6f407cdf41ae8f924b02f3242,
+    type: 3}
 --- !u!114 &-2005853959698691910
 MonoBehaviour:
   m_ObjectHideFlags: 0
