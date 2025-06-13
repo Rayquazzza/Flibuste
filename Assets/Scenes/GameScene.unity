@@ -586,7 +586,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 78378771}
-  - component: {fileID: 78378772}
   m_Layer: 0
   m_Name: GameOverMenu
   m_TagString: Untagged
@@ -610,19 +609,6 @@ Transform:
   - {fileID: 1047934984}
   m_Father: {fileID: 809535549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &78378772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78378770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 989ee6403c35b9a4d9b87b20770a1144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreText: {fileID: 315142591}
 --- !u!1 &96141734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1095,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1366,6 +1352,7 @@ Transform:
   - {fileID: 258402142}
   - {fileID: 768030156}
   - {fileID: 867303432}
+  - {fileID: 1915539617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &374977464
@@ -6736,12 +6723,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915539613}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 374977463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917587110
 GameObject:
@@ -7204,6 +7191,7 @@ GameObject:
   - component: {fileID: 2077975732}
   - component: {fileID: 2077975733}
   - component: {fileID: 2077975734}
+  - component: {fileID: 2077975735}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7254,6 +7242,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 999815080}
+--- !u!114 &2077975735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077975731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989ee6403c35b9a4d9b87b20770a1144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 315142591}
 --- !u!1 &2096281575
 GameObject:
   m_ObjectHideFlags: 0
@@ -7536,4 +7537,3 @@ SceneRoots:
   - {fileID: 805757147}
   - {fileID: 1582588782}
   - {fileID: 1917587111}
-  - {fileID: 1915539617}
