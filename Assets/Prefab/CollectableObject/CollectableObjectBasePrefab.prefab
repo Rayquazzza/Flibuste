@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXrecupObjet: {fileID: 5538922864510624002}
+  SFX: {fileID: 422064788013785808, guid: adb46df5e80690949bdcd7f0aeb86673, type: 3}
 --- !u!114 &-50141238269610694
 MonoBehaviour:
   m_ObjectHideFlags: 0

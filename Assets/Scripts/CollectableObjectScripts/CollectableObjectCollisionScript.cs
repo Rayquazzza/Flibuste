@@ -7,7 +7,8 @@ public class CollectableObjectCollisionScript : MonoBehaviour, ICollidable
 {
     CollectableObjectMovementScript com_Script;
     ScoreManagerScript scoremanager;
-    [SerializeField] VisualEffect VFXrecupObjet; 
+    [SerializeField] VisualEffect VFXrecupObjet;
+    [SerializeField] private GameObject SFX;
     private void OnEnable()
     {
         scoremanager = FindAnyObjectByType<ScoreManagerScript>();
@@ -20,6 +21,10 @@ public class CollectableObjectCollisionScript : MonoBehaviour, ICollidable
 
     private void OnTriggerEnter(Collider other)
     {
+        if (SFX)
+        {
+            Instantiate(SFX, other.gameObject.transform.position, Quaternion.identity);
+        }
         // CollisionForObjectScript collision = other.GetComponent<CollisionForObjectScript>();
         if (other.gameObject.layer == 6)
         {
