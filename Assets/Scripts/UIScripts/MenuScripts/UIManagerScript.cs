@@ -45,19 +45,54 @@ public class UIManagerScript : MonoBehaviour
 
     public void LaunchGame()
     {
+        StartCoroutine(LaunchGameRoutine());
+    }
+
+    public void StartGame()
+    {
+        StartCoroutine(StartGameRoutine());       
+    }
+    public void ExitGame()
+    {
+        StartCoroutine(ExitGameRoutine());      
+    }
+    private IEnumerator LaunchGameRoutine()
+    {
+        yield return null;
+        // Démarre l’animation de transition
+        //yield return StartCoroutine(SceneController.instance.LoadLevel());
+
+        // Patiente encore un peu après la transition si tu veux
+        //yield return new WaitForSeconds(0.2f);
+
+        // Puis masque les menus et passe au gameplay
         HideAllMenus();
         GameplayUI.SetActive(true);
         GAME.MANAGER.EnterState(State.Gameplay);
         EVENTS.InvokeGameStart();
     }
 
-    public void StartGame()
+    private IEnumerator StartGameRoutine()
     {
+        // Démarre l’animation de transition
+        yield return StartCoroutine(SceneController.instance.LoadLevel());
+
+        // Patiente encore un peu après la transition si tu veux
+        //yield return new WaitForSeconds(0.2f);
+
+        // Puis masque les menus et passe au gameplay
         HideAllMenus();
         TutorialUI.SetActive(true);
     }
-    public void ExitGame()
+    private IEnumerator ExitGameRoutine()
     {
+        // Démarre l’animation de transition
+        yield return StartCoroutine(SceneController.instance.LoadLevel());
+
+        // Patiente encore un peu après la transition si tu veux
+        //yield return new WaitForSeconds(0.2f);
+
+        // Puis masque les menus et passe au gameplay
         HideAllMenus();
         GameOverMenu?.SetActive(true);
         GAME.MANAGER.EnterState(State.End);
