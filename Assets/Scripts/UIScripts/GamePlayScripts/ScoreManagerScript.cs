@@ -6,7 +6,7 @@ using DG.Tweening;
 public class ScoreManagerScript : MonoBehaviour
 {
     TextMeshProUGUI Score;
-    int scoreCount = 0;
+    public int scoreCount = 0;
     private void OnEnable()
     {
         EVENTS.OnGameStart += ResetScore;
