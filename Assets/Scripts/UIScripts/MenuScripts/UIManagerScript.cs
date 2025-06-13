@@ -50,8 +50,9 @@ public class UIManagerScript : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(StartGameRoutine());       
+        StartCoroutine(StartGameRoutine());
     }
+    
     public void ExitGame()
     {
         StartCoroutine(ExitGameRoutine());      

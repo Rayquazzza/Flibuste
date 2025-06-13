@@ -1,14 +1,17 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonScript : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
+public class ButtonScript : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler
 {
     [SerializeField] private float transitionDuration;
+    [SerializeField] private AudioSource clip;
     public void OnPointerEnter(PointerEventData eventData)
     {
+        clip = GetComponent<AudioSource>();
         transform.DOScale(new Vector3(1.4f, 1.4f, 1f), transitionDuration);
     }
 
@@ -16,4 +19,14 @@ public class ButtonScript : MonoBehaviour,IPointerEnterHandler,IPointerExitHandl
     {
         transform.DOScale(Vector3.one , transitionDuration);
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (clip != null)
+        {
+            clip.Play();
+        }
+    }
+
+
 }
