@@ -115,6 +115,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 12265_Fish_v1_L2
       objectReference: {fileID: 0}
+    - target: {fileID: 5839870858113464067, guid: 490fddeef4727f241a1965f30ab252c0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87bc31c6dab7f234e9a5f9bbc26b0617, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
